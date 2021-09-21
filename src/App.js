@@ -1,14 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import Counter from './Counter.js';
-import ImageItem from'./ImageItem.js';
+import ImageList from './ImageList.js';
+import React, { Component } from 'react'
 
-function App() {
-  return (
+export default class App extends Component {
+  render (){
+    return(
     <div className="App">
-      <ImageItem />
+      <Counter />
+      <ImageList />
     </div>
-  );
+    )
+  }
 }
-
-export default App;
