@@ -19,7 +19,7 @@ export default class ImageList extends Component {
     render() {
         const KeywordCreatures = Creatures.filter ( creature => !this.state.keyword || creature.keyword === this.state.keyword )
 
-        const HornCreatures = Creatures.filter ( creature => !this.state.horns || creature.horns === this.state.horns )
+        // const HornCreatures = Creatures.filter ( creature => !this.state.horns || creature.horns === this.state.horns )
 
         return (
             <div>
