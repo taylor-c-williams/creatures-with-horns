@@ -17,15 +17,11 @@ export default class ImageList extends Component {
     }    
 
     render() {
-        const KeywordCreatures = Creatures.filter (creature => !this.state.keyword || creature.keyword === this.state.keyword)
+        const FilteredCreatures = Creatures.filter (creature => (!this.state.keyword || creature.keyword === this.state.keyword)&& (!Number(this.state.horns) || Number(creature.horns) === Number(this.state.horns)))
         
-        const HornedCreatures = Creatures.filter (creature => !Number(this.state.horns) || Number(creature.horns) === Number(this.state.horns))
-
-        const Both = KeywordCreatures.concat(HornedCreatures)
 
         console.log(this.state.keyword)
         console.log(this.state.horns)
-        console.log(Both)
 
         return (
             <div>
@@ -53,13 +49,13 @@ export default class ImageList extends Component {
                     <option value={Number(100)}>100</option>
                 </select>
 
-                {Both.map(creature =>(<ImageItem
+                {FilteredCreatures.map(creature =>(<ImageItem
                 url = {creature.url} 
                 title = {creature.title}
                 description = {creature.description}
                 keyword = {creature.keyword}
                 horns = {creature.horns}
-                />))}       
+                />))}      
             </div>
             )
         }   
