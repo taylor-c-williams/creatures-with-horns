@@ -1,15 +1,22 @@
+import React, { Component } from 'react'
 import './App.css'
 import Header from './Header.js'
 import ImageList from './ImageList.js'
-import React, { Component } from 'react'
+import Filters from './Filters'
 
 export default class App extends Component {
 
-  render (){
+
+
+  render ()
+  
+  {
     return(
+    
     <div className="App">
+
       <Header />
-      <ImageList />
+      <ImageList items  = {Filters}/>
     </div>
     )
   }

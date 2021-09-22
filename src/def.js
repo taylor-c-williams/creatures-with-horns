@@ -6,3 +6,7 @@ const HornedCreatures = Creatures.filter (creature => !this.state.horns || creat
 const FilteredCreatures = HornedCreatures.concat(KeywordCreatures)
 
 const HornedCreatures = Creatures.filter (creature => !Number(this.state.horns) || Number(creature.horns) === Number(this.state.horns))
+
+
+{console.log (this.state.keyword)}
+{console.log (this.state.horns)}

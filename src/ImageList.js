@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import ImageItem from './ImageItem.js'
-import Creatures from './data.js'
+import Filters from './Filters'
 
 export default class ImageList extends Component {
     state = {
         keyword: '',
         horns: ''
     }
-    
     handleChange = (e) => {
     this.setState({ keyword: e.target.value })
     }
@@ -15,17 +13,11 @@ export default class ImageList extends Component {
     handleHorns = (e) => {
         this.setState({ horns: e.target.value })
     }    
-
-    render() {
-        const FilteredCreatures = Creatures.filter (creature => (!this.state.keyword || creature.keyword === this.state.keyword)&& (!Number(this.state.horns) || Number(creature.horns) === Number(this.state.horns)))
-        
-
-        console.log(this.state.keyword)
-        console.log(this.state.horns)
-
+ 
+    render(){
         return (
             <div>
-                  <p>Show all {this.state.keyword} Creatures</p>
+                  <p>Show all {this.props.keyword} Creatures</p>
                 <select onChange={this.handleChange} >
                     <option value="">All Creatures</option>
                     <option value="narwhal">Narwhal</option>
@@ -48,14 +40,9 @@ export default class ImageList extends Component {
                     <option value={Number(3)}>3</option>
                     <option value={Number(100)}>100</option>
                 </select>
-
-                {FilteredCreatures.map(creature =>(<ImageItem
-                url = {creature.url} 
-                title = {creature.title}
-                description = {creature.description}
-                keyword = {creature.keyword}
-                horns = {creature.horns}
-                />))}      
+{console.log(this.state.keyword)}
+{console.log(this.state.horns)}
+            <Filters />
             </div>
             )
         }   
