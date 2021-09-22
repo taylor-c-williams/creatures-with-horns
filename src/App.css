@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@0;1&display=swap');
+
+.creatures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.creatures img{
+  height:200px;
+  margin:10px;
+  border:1px dotted;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+}
+
+select {
+  font-family: 'Space Mono', monospace;
+  border: 1px dotted;
+}
+
+h1 { font-family: 'Space Mono', monospace;
+
+}
