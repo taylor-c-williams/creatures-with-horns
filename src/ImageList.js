@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import ImageItem from './ImageItem.js'
-import Creatures from './data.js'
+import Filter from './Filter'
 import Dropdown from './Dropdown'
+import Creatures from './data'
+
 export default class ImageList extends Component {
     state = {
         keyword: '',
@@ -18,25 +19,15 @@ export default class ImageList extends Component {
     }    
 
     render() {
-        const FilteredCreatures = Creatures.filter (creature => (!this.state.keyword || creature.keyword === this.state.keyword)&& (!Number(this.state.horns) || Number(creature.horns) === Number(this.state.horns)))
         
-
-        console.log(this.state.keyword)
-        console.log(this.state.horns)
+        const FilteredCreatures = Creatures.filter (creature => (!this.state.keyword || creature.keyword === this.state.keyword)&& (!Number(this.state.horns) || Number(creature.horns) === Number(this.state.horns)))
 
         return (
             <div>
                  <Dropdown handleChange = {this.handleChange}
                  handleHorns = {this.handleHorns} />
 
-
-                {FilteredCreatures.map(creature =>(<ImageItem
-                url = {creature.url} 
-                title = {creature.title}
-                description = {creature.description}
-                keyword = {creature.keyword}
-                horns = {creature.horns}
-                />))}      
+                 <Filter FilteredCreatures = {FilteredCreatures}/>
             </div>
             )
         }   
