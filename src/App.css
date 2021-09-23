@@ -40,17 +40,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@0;1&display=swap');
 
 .creatures {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display:flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-transform: capitalize;
+  margin-top:20px;
 }
 
 .creatures img{
   height:200px;
   margin:10px;
   border:1px dotted;
+  border-radius: 500px;
 }
 
 body {
@@ -60,13 +62,8 @@ body {
 select {
   font-family: 'Space Mono', monospace;
   border: 1px dotted;
+  margin:10px;
 }
 
 h1 { font-family: 'Space Mono', monospace;
-
-}
-
-ul{
-  list-style: none;
-
 }
